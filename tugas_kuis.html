@@ -3,142 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Learning SMP Digital</title>
+    <title>SMP Digital Merdeka</title>
     <style>
-        /* Gaya Dasar & Reset */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #f4f7f6;
+            background-color: #f4f6f9;
             color: #333;
-            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* Header / Navigasi */
+        /* Header Utama */
         header {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 15px;
+            background-color: #1e3a5f;
+            color: white;
+            width: 100%;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 30px 20px;
         }
 
         header h1 {
-            font-size: 1.5rem;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
         }
 
         header p {
-            font-size: 0.85rem;
-            color: #bdc3c7;
+            font-size: 14px;
+            color: #cbd5e1;
         }
 
         /* Kontainer Utama */
         .container {
-            padding: 15px;
-            max-width: 800px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
         }
 
         /* Banner Selamat Datang */
-        .banner {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+        .welcome-banner {
+            background-color: #2b82c9;
             color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
             text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
         }
 
-        .banner h2 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
+        .welcome-banner h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
-        /* Menu Grid (Sangat Mobile Friendly) */
+        .welcome-banner p {
+            font-size: 14px;
+            color: #e0f2fe;
+        }
+
+        /* Grid Menu Berubah Jadi 2 Kolom */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 Kolom di HP */
-            gap: 12px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
         }
 
         .menu-card {
             background-color: white;
-            padding: 20px 15px;
+            border-bottom: 4px solid #2b82c9;
             border-radius: 8px;
+            padding: 25px;
             text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
             text-decoration: none;
-            color: #2c3e50;
-            font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-bottom: 4px solid #3498db;
-            transition: transform 0.2s;
+            color: #333;
         }
 
-        .menu-card:active {
-            transform: scale(0.95); /* Efek saat ditekan di layar HP */
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
         }
 
-        .menu-card span {
+        .menu-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
             display: block;
-            font-size: 1.8rem;
-            margin-bottom: 5px;
         }
 
-        /* Bagian Pengumuman */
-        .announcement {
+        .menu-title {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* Bagian Informasi */
+        .info-section {
             background-color: white;
-            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
         }
 
-        .announcement h3 {
-            border-left: 4px solid #e74c3c;
-            padding-left: 8px;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+        .info-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            border-left: 4px solid #e11d48;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .announcement ul {
-            list-style-position: inside;
-            font-size: 0.9rem;
+        .info-list {
+            list-style: none;
         }
 
-        .announcement li {
-            margin-bottom: 8px;
-            color: #555;
+        .info-list li {
+            font-size: 14px;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 15px;
+            line-height: 1.5;
+        }
+
+        .info-list li::before {
+            content: "•";
+            color: #333;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 15px;
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            margin-top: 20px;
+            font-size: 12px;
+            color: #64748b;
+            margin-top: auto;
+            padding-bottom: 20px;
+            width: 100%;
         }
 
-        /* Media Query untuk Layar Lebih Besar (Tablet/Laptop) */
-        @media (min-width: 600px) {
-            header h1 { font-size: 2rem; }
-            .menu-grid { grid-template-columns: repeat(4, 1fr); } /* Menjadi 4 kolom di layar lebar */
-            .banner h2 { font-size: 1.8rem; }
+        /* Responsif untuk Layar HP */
+        @media (max-width: 600px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Bagian Atas Website -->
+    <!-- Header -->
     <header>
         <h1>SMP DIGITAL MERDEKA</h1>
         <p>Gerbang Edukasi Berbasis Teknologi Jenjang SMP</p>
@@ -147,37 +177,42 @@
     <!-- Konten Utama -->
     <div class="container">
         
-        <!-- Banner -->
-        <div class="banner">
+        <!-- Banner Selamat Datang -->
+        <div class="welcome-banner">
             <h2>Selamat Datang di Ruang Kelas Digital</h2>
             <p>Akses materi, tugas, dan ujian jadi lebih mudah dari genggaman tanganmu.</p>
         </div>
 
-        <!-- Menu Utama -->
+        <!-- Grid Menu (2 Menu Sesuai Permintaan) -->
+        <div class="menu-grid">
+            <!-- Menu 1 -->
+            <a href="https://paisukarto.site.je" class="menu-card">
+                <span class="menu-icon">📖</span>
+                <span class="menu-title">PAI 7</span>
+            </a>
+
+            <!-- Menu 2 -->
             <a href="https://matsukarto.site.je" class="menu-card">
-                <span>📝</span> PAI 7
+                <span class="menu-icon">📐</span>
+                <span class="menu-title">Matematika 8</span>
             </a>
-	    <a href="https://paisukarto.site.je" class="menu-card">
-                <span>📝</span> Matematika 8
-            </a>
-            
         </div>
 
-        <!-- Info / Pengumuman Sekolah -->
-        <div class="announcement">
-            <h3>📢 Informasi Terbaru</h3>
-            <ul>
-                <li>Gunakan akun NIS masing-masing untuk masuk ke menu Tugas/Kuis.</li>
-                <li>#.</li>
-                <li>#.</li>
+        <!-- Bagian Informasi -->
+        <div class="info-section">
+            <div class="info-title">📢 Informasi Terbaru</div>
+            <ul class="info-list">
+                <li>Gunakan akun NISN masing-masing untuk masuk ke menu Tugas.</li>
+                <li>---------------------------.</li>
+                <li>---------------------------.</li>
             </ul>
         </div>
 
     </div>
 
-    <!-- Bagian Bawah Website -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; Sukarto, S.Pd. Semua Hak Cipta Dilindungi.</p>
+        © Sukarto, S.Pd. Semua Hak Cipta Dilindungi.
     </footer>
 
 </body>
