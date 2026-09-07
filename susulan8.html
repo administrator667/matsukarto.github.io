@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas & Kuis - Microsite</title>
+    <!-- Google Fonts & FontAwesome untuk ikon -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            /* Background luar angkasa dengan efek gelap transparan */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1000&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Bagian Profil */
+        .profile-img-container {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+            background-color: #2c2c3c;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        p.subtitle {
+            font-size: 14px;
+            color: #e0e0e0;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        /* Daftar Tombol Tautan */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(106, 114, 139, 0.65); /* Warna abu-abu kebiruan transparan */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 14px 22px;
+            border-radius: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Efek saat tombol disentuh/diarahkan kursor */
+        .btn-link:hover {
+            background: rgba(126, 134, 159, 0.85);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-link:active {
+            transform: translateY(1px);
+        }
+
+        /* Style Ikon di dalam Tombol */
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* Warna khas ikon tertentu */
+        .btn-icon.wa {
+            color: #25D366;
+        }
+
+        .btn-text {
+            flex-grow: 1;
+            text-align: center;
+            padding-right: 15px; /* Menyeimbangkan posisi teks karena ada ikon di kiri */
+        }
+
+        /* Placeholder kosong untuk penyeimbang kanan agar teks benar-benar di tengah */
+        .icon-spacer {
+            width: 36px;
+        }
+
+        /* Responsif untuk layar HP kecil */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+            .btn-link {
+                padding: 12px 18px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Bagian Foto Profil -->
+        <div class="profile-img-container">
+            <!-- Ganti link gambar src dengan foto profil Anda -->
+            <img src="https://lh3.googleusercontent.com/d/1mas7p6jDbgBOO2g5LaYLtmb4-WvN5qRG" alt="Foto Profil">
+        </div>
+
+        <h1>Tugas & Kuis</h1>
+        <p class="subtitle">Selamat datang di microsite saya</p>
+        <p class="subtitle">@Sukarto, S.Pd.</p>
+        <!-- Bagian Tombol Tautan (Ubah atribut href sesuai link tujuan Anda) -->
+        <div class="links-container">
+            
+            <!-- Tombol 1: Ujian online -->
+            <a href="https://matsukarto.site." target="_blank" class="btn-link">
+                <div class="btn-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <span class="btn-text">Ujian Online (CBT) </span>
+                <div class="icon-spacer"></div>
+            </a>
+
+            <!-- Tombol 2: Khusus UH1 -->
+            <a href="https://script.google.com/macros/s/AKfycbyslzuecKzqO08T0XMt-Skx3wdUD4iyMIFJm07qlz0sgyTnkoovoKxkK6R4XXIlGMA/exec" target="_blank" class="btn-link">
+                <div class="btn-icon">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+                <span class="btn-text">UH1 PLSV & PtLSV</span>
+                <div class="icon-spacer"></div>
+            </a>
+
+            <!-- Tombol 3: WhatsApp -->
+            <a href="https://wa.me/6285648034092" target="_blank" class="btn-link">
+                <div class="btn-icon wa">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <span class="btn-text">WhatsApp</span>
+                <div class="icon-spacer"></div>
+            </a>
+
+            <!-- Tombol 4: Email -->
+            <a href="uploadfile979@gmail.com" class="btn-link">
+                <div class="btn-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <span class="btn-text">Email</span>
+                <div class="icon-spacer"></div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
